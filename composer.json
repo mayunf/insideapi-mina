@@ -1,0 +1,29 @@
+{
+  "name": "mayunfeng/insideapi-mina",
+  "description": "内部SDK 仅供内部使用",
+  "license": "MIT",
+  "keywords": ["内部 api"],
+  "authors": [
+    {
+      "name": "mayunfeng",
+      "email": "mayunfeng@jwsem.com"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "^1.17",
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "pimple/pimple": "~3.0",
+    "symfony/http-foundation": "^3.3"
+  },
+  "require-dev": {
+    "mockery/mockery": "^0.9.9",
+    "phpunit/phpunit": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mayunfeng\\InsideMina\\": "src/",
+      "Mayunfeng\\Supports\\": "supports/"
+    }
+  }
+}
