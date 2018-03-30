@@ -11,7 +11,8 @@ namespace Mayunfeng\InsideMina\Core;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
 use Mayunfeng\Supports\Collection;
-
+use Mayunfeng\InsideMina\Log;
+use Mayunfeng\InsideMina\Core\Exceptions\HttpException;
 /**
  * BaseApi use before login
  * Class BaseApi
@@ -105,8 +106,8 @@ abstract class AbstractAPI
     protected function logMiddleware()
     {
         return Middleware::tap(function (RequestInterface $request, $options) {
-//            Log::debug("请求: {$request->getMethod()} {$request->getUri()} ".json_encode($options));
-//            Log::debug('请求头:'.json_encode($request->getHeaders()));
+            Log::debug("请求: {$request->getMethod()} {$request->getUri()} ".json_encode($options));
+            Log::debug('请求头:'.json_encode($request->getHeaders()));
         });
     }
 
@@ -124,10 +125,7 @@ abstract class AbstractAPI
 
         $contents = $http->parseJSON(call_user_func_array([$http, $method], $args));
 
-        if (isset($contents['Body']) && !empty($contents['Body'])) {
-            $contents['Body'] = \GuzzleHttp\json_decode($contents['Body'],true);
-        }
-        $contents = $this->checkAndThrow($contents);
+//        $this->checkAndThrow($contents);
 
         return new Collection($contents);
     }
@@ -141,22 +139,11 @@ abstract class AbstractAPI
     protected function checkAndThrow(array $contents)
     {
         if (isset($contents['Header']['Status']) && 0 !== $contents['Header']['Status']) {
-            if (empty($contents['Header']['Falures'])) {
-                $contents['Header']['Falures'][0]['Mess'] = '未知原因';
+            if (empty($contents['Header']['Desc'])) {
+                $contents['Header']['Desc'] = '未知错误';
             }
-            if (empty($contents['Header']['Falures'])) {
-                $contents['Header']['Falures'][0]['Code'] = '-1';
-            }
-            $contents['Success'] = false;
-            $contents['ErrCode'] = $contents['Header']['Falures'][0]['Code'];
-            $contents['ErrMsg'] = ErrCode::getErrMsg($contents['Header']['Falures'][0]['Code']);
-//            throw new Exception($contents['ErrMsg'],$contents['ErrCode']);
-        } else {
-            $contents['Success'] = true;
-            $contents['ErrCode'] = 0;
-
+            throw new HttpException($contents['Header']['Desc'], $contents['Header']['Status']);
         }
-
         return $contents;
     }
 

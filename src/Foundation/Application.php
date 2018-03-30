@@ -37,7 +37,6 @@ class Application extends Container
     /**
      * Application constructor.
      * @param $config
-     * @throws \Exception
      */
     public function __construct($config)
     {
