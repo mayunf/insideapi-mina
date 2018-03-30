@@ -25,6 +25,8 @@ class User extends AbstractAPI
     const GET_ACC_INFO_BD = 'v1/user/getaccinfobd'; // 获取百度账户信息
     const GET_ACC_INFO_WL = 'v1/user/getaccinfowl'; // 获取卧龙账户信息
 
+    const GET_ACC_DJ_REPORTS = 'v1/user/getaccdjreports'; // 获取账户报告
+
 
     public function getInfo($params = [])
     {
@@ -73,5 +75,10 @@ class User extends AbstractAPI
     public function getAccInfoWl($params = [])
     {
         return $this->parseJSON(static::POST,[self::GET_ACC_INFO_WL,$params]);
+    }
+
+    public function getAccReports($params = [])
+    {
+        return $this->parseJSON(static::POST,[self::GET_ACC_DJ_REPORTS,$params]);
     }
 }
