@@ -9,7 +9,6 @@
 namespace Mayunfeng\InsideMina\User;
 
 use Mayunfeng\InsideMina\Core\AbstractAPI;
-use Mayunfeng\Supports\Collection;
 
 class User extends AbstractAPI
 {

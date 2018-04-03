@@ -22,7 +22,8 @@ use Mayunfeng\InsideMina\Core\Http;
 /**
  * Class Application
  *
- * @property \Mayunfeng\InsideMina\User\User               $user
+ * @property \Mayunfeng\InsideMina\User\User                $user
+ * @property \Mayunfeng\InsideMina\Weixin\Weixin            $weixin
  *
  * @package InsideAPI\Foundation
  */
@@ -30,7 +31,8 @@ class Application extends Container
 {
 
     protected $providers = [
-        ServiceProviders\UserServiceProvider::class
+        ServiceProviders\UserServiceProvider::class,
+        ServiceProviders\WeixinServiceProvider::class
     ];
 
 
