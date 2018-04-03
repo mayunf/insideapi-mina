@@ -1,7 +1,5 @@
-composer.phar
 /vendor/
-/test/
-.idea/
+/.idea/
 composer.lock
 test.php
 
