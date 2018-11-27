@@ -16,8 +16,8 @@ use Monolog\Logger;
 use Pimple\Container;
 use Symfony\Component\HttpFoundation\Request;
 use Mayunfeng\InsideMina\Core\AccessToken;
-use Mayunfeng\InsideMina\Log;
 use Mayunfeng\InsideMina\Core\Http;
+use Mayunfeng\Supports\Log;
 
 /**
  * Class Application

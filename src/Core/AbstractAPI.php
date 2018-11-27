@@ -11,8 +11,9 @@ namespace Mayunfeng\InsideMina\Core;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
 use Mayunfeng\Supports\Collection;
-use Mayunfeng\InsideMina\Log;
 use Mayunfeng\InsideMina\Core\Exceptions\HttpException;
+use Mayunfeng\Supports\Log;
+
 /**
  * BaseApi use before login
  * Class BaseApi

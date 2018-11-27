@@ -12,19 +12,19 @@ use Mayunfeng\InsideMina\Core\AbstractAPI;
 
 class User extends AbstractAPI
 {
-    const MOBILE = 'v1/user/mobile';    // 判断手机号是否存在
-    const REGISTER = 'v1/user/register';    // 用户注册
-    const GET_INFO = 'v1/user/getinfo'; // 获取用户信息
-    const EDIT_PWD = 'v1/user/editpwd'; // 编辑密码
+    const MOBILE = 'user/mobile';    // 判断手机号是否存在
+    const REGISTER = 'user/register';    // 用户注册
+    const GET_INFO = 'user/getinfo'; // 获取用户信息
+    const EDIT_PWD = 'user/editpwd'; // 编辑密码
 
-    const GET_PER_ALL = 'v1/user/getperall';    // 获取全部权限
-    const GET_ACC_LIST = 'v1/user/getacclist';  // 获取账户列表
+    const GET_PER_ALL = 'user/getperall';    // 获取全部权限
+    const GET_ACC_LIST = 'user/getacclist';  // 获取账户列表
 
-    const GET_ACC_INFO_DJ = 'v1/user/getaccinfodj'; // 获取点睛账户信息
-    const GET_ACC_INFO_BD = 'v1/user/getaccinfobd'; // 获取百度账户信息
-    const GET_ACC_INFO_WL = 'v1/user/getaccinfowl'; // 获取卧龙账户信息
+    const GET_ACC_INFO_DJ = 'user/getaccinfodj'; // 获取点睛账户信息
+    const GET_ACC_INFO_BD = 'user/getaccinfobd'; // 获取百度账户信息
+    const GET_ACC_INFO_WL = 'user/getaccinfowl'; // 获取卧龙账户信息
 
-    const GET_ACC_DJ_REPORTS = 'v1/user/getaccdjreports'; // 获取账户报告
+    const GET_ACC_DJ_REPORTS = 'user/getaccdjreports'; // 获取账户报告
 
 
     public function getInfo($params = [])

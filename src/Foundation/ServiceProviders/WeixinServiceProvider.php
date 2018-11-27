@@ -8,7 +8,6 @@
 
 namespace Mayunfeng\InsideMina\Foundation\ServiceProviders;
 
-use Mayunfeng\InsideMina\User\User;
 use Mayunfeng\InsideMina\Weixin\Weixin;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

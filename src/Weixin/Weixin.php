@@ -11,12 +11,12 @@ use Mayunfeng\InsideMina\Core\AbstractAPI;
 
 class Weixin extends AbstractAPI
 {
-    const SET_TOKEN = 'v1/weixin/settoken'; // 设置token
-    const SET_INFO = 'v1/weixin/setinfo'; // 设置info
-    const GET_BD_ACCOUNT_INFO = '/v1/weixin/baiduGetAccountInfo'; // 获取百度账户信息
-    const GET_SG_ACCOUNT_INFO = '/v1/weixin/sogouGetAccountInfo'; // 获取搜狗账户信息
-    const GET_SM_ACCOUNT_INFO = '/v1/weixin/wolongGetAccountInfo'; // 获取神马账户信息
-    const GET_DJ_ACCOUNT_INFO = '/v1/weixin/dianjingGetAccountInfo'; // 获取点睛账户信息
+    const SET_TOKEN = 'weixin/settoken'; // 设置token
+    const SET_INFO = 'weixin/setinfo'; // 设置info
+    const GET_BD_ACCOUNT_INFO = 'weixin/baiduGetAccountInfo'; // 获取百度账户信息
+    const GET_SG_ACCOUNT_INFO = 'weixin/sogouGetAccountInfo'; // 获取搜狗账户信息
+    const GET_SM_ACCOUNT_INFO = 'weixin/wolongGetAccountInfo'; // 获取神马账户信息
+    const GET_DJ_ACCOUNT_INFO = 'weixin/dianjingGetAccountInfo'; // 获取点睛账户信息
 
     public function setToken($params = [])
     {

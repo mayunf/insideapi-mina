@@ -14,8 +14,6 @@ class AccessToken
 
     protected $userid; // 用户ID
 
-    const HOST = 'http://inside.xiaolutg.com/api/';
-
     public function __construct($token,$userid)
     {
         $this->token = $token;

@@ -12,7 +12,7 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\ResponseInterface;
 use Mayunfeng\InsideMina\Core\Exceptions\HttpException;
-use Mayunfeng\InsideMina\Log;
+use Mayunfeng\Supports\Log;
 class Http
 {
     /**
@@ -189,25 +189,17 @@ class Http
      */
     public function request($url, $method = 'GET', $options = [])
     {
-        $url = AccessToken::HOST.$url;
-
         $method = strtoupper($method);
-
         $options = array_merge(self::$defaults, $options);
-
         Log::debug('Client 请求:', compact('url', 'method', 'options'));
-
         $options['handler'] = $this->getHandler();
-
         $response = $this->getClient()->request($method, $url, $options);
-
         Log::debug('API 响应:', [
             'Status' => $response->getStatusCode(),
             'Reason' => $response->getReasonPhrase(),
             'Headers' => $response->getHeaders(),
             'Body' => strval($response->getBody()),
         ]);
-
         return $response;
     }
 
